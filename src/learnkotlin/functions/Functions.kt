@@ -51,6 +51,8 @@ fun main(args: Array<String>) {
     println(addAll(1, 2, 3))
     println(addAll(1, 2, 3, 4))
 
+    // to convert from array to varargs parameter, use the spread operator "*"
+
     val intArray = intArrayOf(1, 2, 3, 4, 5)
     println(addAll(*intArray))
 
