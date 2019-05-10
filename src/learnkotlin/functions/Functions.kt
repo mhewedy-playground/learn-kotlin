@@ -29,6 +29,8 @@ fun printDetails(name: String, email: String = "", phone: String) {
     println("name $name, email: $email, phone: $phone")
 }
 
+fun addAll(vararg num: Int) = num.reduce { acc, i -> acc + i }
+
 fun main(args: Array<String>) {
 
     println(hello())
@@ -43,4 +45,16 @@ fun main(args: Array<String>) {
     sum(z = 100, y = 1, x = 30)
 
     printDetails("Ali", phone = "9665 123")
+
+    println(addAll(1))
+    println(addAll(1, 2))
+    println(addAll(1, 2, 3))
+    println(addAll(1, 2, 3, 4))
+
+    val intArray = intArrayOf(1, 2, 3, 4, 5)
+    println(addAll(*intArray))
+
+    val intList = arrayListOf(1, 2, 3, 4, 5, 6)
+    println(addAll(*intList.toIntArray()))  // `toIntArray` is an expensive operation, cause it do loop over elements
+
 }
