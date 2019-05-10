@@ -19,6 +19,15 @@ class CustomerWithInitBlock(val id: Int, var name: String = "") {
     }
 }
 
+// 5
+class CustomerWithSecondaryConstructors(val id: Int, var name: String = "") {
+
+
+    constructor(idAndName: String) : this(idAndName.split(",")[0].toInt(), idAndName.split(",")[1]) {
+        // optional block
+    }
+}
+
 
 // main ***********************************************************************
 fun main(args: Array<String>) {
@@ -42,5 +51,8 @@ fun main(args: Array<String>) {
 
 
     println(CustomerWithInitBlock(id = 10, name = "Wael").name)
+
+    val c4 = CustomerWithSecondaryConstructors("10,Samir")
+    println("id: ${c4.id}, name: ${c4.name}")
 }
 
