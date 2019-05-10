@@ -1,10 +1,10 @@
 package learnkotlin.basics
 
-import learnkotlin.basics.utils.strcomp
+import learnkotlin.basics.utils.strcomp as stringCompare
 
 fun main(args: Array<String>) {
 
     println("Hello World")
 
-    println(strcomp("hello", "hello"))
+    println(stringCompare("hello", "hello"))
 }
