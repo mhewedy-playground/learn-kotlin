@@ -51,4 +51,16 @@ fun main(args: Array<String>) {
         println(c)
     }
 
+    // for loop labels
+
+    myLoop@ for (i in 1..100) {
+        for (j in 1..100) {
+            if (i % j == 3) {
+                break@myLoop
+            } else {
+                print("($i, $j)")
+            }
+        }
+    }
+
 }
