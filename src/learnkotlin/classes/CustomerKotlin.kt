@@ -19,6 +19,4 @@ fun main(args: Array<String>) {
 
     println(customer1)
     println(customer2)
-
-
 }
