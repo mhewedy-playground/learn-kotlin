@@ -9,14 +9,18 @@ class CustomerWithConstructorAndProperties(idParam: Int, nameParam: String) {
 // 2, then better use val/var with constructor param to define a property as well
 class Customer(val id: Int, var name: String)
 
+// 3
 class CustomerWithDefaultParameter(val id: Int, var name: String = "")
 
+// 4
 class CustomerWithInitBlock(val id: Int, var name: String = "") {
     init {
         name = name.toUpperCase()
     }
 }
 
+
+// main ***********************************************************************
 fun main(args: Array<String>) {
 
     val customer = Customer(1, "mhewedy")
@@ -37,6 +41,6 @@ fun main(args: Array<String>) {
     val c3 = CustomerWithDefaultParameter(3, name = "Wael")
 
 
-    println(CustomerWithInitBlock(id=10, name = "Wael").name)
+    println(CustomerWithInitBlock(id = 10, name = "Wael").name)
 }
 
