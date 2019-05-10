@@ -22,6 +22,12 @@ fun add(x: Int, y: Int) {
 
 fun addV2(x: Int, y: Int) = x + y
 
+fun sum(x: Int, y: Int, z: Int = 0) = x + y + z
+
+
+fun printDetails(name: String, email: String = "", phone: String) {
+    println("name $name, email: $email, phone: $phone")
+}
 
 fun main(args: Array<String>) {
 
@@ -30,4 +36,11 @@ fun main(args: Array<String>) {
         throwsAnException()
     } catch (ex: Exception) {
     }
+
+    sum(10, 20)
+    sum(10, 20, 30)
+    sum(y = 1, x = 30)
+    sum(z = 100, y = 1, x = 30)
+
+    printDetails("Ali", phone = "9665 123")
 }
