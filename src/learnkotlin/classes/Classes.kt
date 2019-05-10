@@ -11,6 +11,12 @@ class Customer(val id: Int, var name: String)
 
 class CustomerWithDefaultParameter(val id: Int, var name: String = "")
 
+class CustomerWithInitBlock(val id: Int, var name: String = "") {
+    init {
+        name = name.toUpperCase()
+    }
+}
+
 fun main(args: Array<String>) {
 
     val customer = Customer(1, "mhewedy")
@@ -29,5 +35,8 @@ fun main(args: Array<String>) {
     val c1 = CustomerWithDefaultParameter(10)
     val c2 = CustomerWithDefaultParameter(id = 2)
     val c3 = CustomerWithDefaultParameter(3, name = "Wael")
+
+
+    println(CustomerWithInitBlock(id=10, name = "Wael").name)
 }
 
