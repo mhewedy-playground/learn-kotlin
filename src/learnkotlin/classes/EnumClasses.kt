@@ -15,10 +15,12 @@ enum class Priority(/*it can be `val` as well*/var value: Int) {
     };
 
     override fun toString(): String {
-        return "(name=$name, value=$value, ordinal=$ordinal), size: ${size()}"
+        return "(name=$name, value=$value, ordinal=$ordinal), size: ${size()}, xyz= ${xyz()}"
     }
 
     abstract fun size(): Int
+
+    fun xyz() = "$value"
 }
 
 fun main(args: Array<String>) {
@@ -31,7 +33,7 @@ fun main(args: Array<String>) {
     /*Priority.values().forEach { println(it) }*/
 
     // the values() returns an array which is an iterable (has the method iterator())
-    for (priority in Priority.values()) {
-        println(priority)
+    for (priorityInList in Priority.values()) {
+        println(priorityInList)
     }
 }
