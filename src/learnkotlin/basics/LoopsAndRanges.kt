@@ -45,4 +45,10 @@ fun main(args: Array<String>) {
         println(i)
     }
 
+    // For loop work over any Iterables (classes that has the iterator() function),
+    // not only Ranges, but lists and arrays as well
+    for (c in arrayOf("Cairo", "Riyadh", "Dubai")) {
+        println(c)
+    }
+
 }
