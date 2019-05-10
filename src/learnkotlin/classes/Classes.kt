@@ -41,6 +41,17 @@ class CustomerWithCustomGetter(val id: Int, var name: String, private val dateOf
         get() = Period.between(dateOfBirth, LocalDate.now()).years
 }
 
+// 7
+class CustomerWithCustomSetter() {
+    var ssn: String = ""
+        set(value) {
+            if (!value.toUpperCase().startsWith("SSN")) {
+                throw IllegalArgumentException("should start with SSN")
+            }
+            field = value
+        }
+}
+
 
 // main ***********************************************************************
 fun main(args: Array<String>) {
@@ -71,5 +82,16 @@ fun main(args: Array<String>) {
     println(CustomerWithCustomGetter(1, "Mohammad", LocalDate.of(1985, 1, 1)).age)
     println(CustomerWithCustomGetter(1, "Abdullah", LocalDate.of(2013, 11, 7)).age)
     println(CustomerWithCustomGetter(1, "Farida", LocalDate.of(2016, 9, 9)).age)
+
+
+    val c5 = CustomerWithCustomSetter()
+    try {
+        c5.ssn = "123"
+    } catch (ex: IllegalArgumentException) {
+        println(ex)
+    }
+
+    c5.ssn = "SSN123"
+    println("ssn number is ${c5.ssn}")
 }
 
