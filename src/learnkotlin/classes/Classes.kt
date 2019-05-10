@@ -1,5 +1,8 @@
 package learnkotlin.classes
 
+import java.time.LocalDate
+import java.time.Period
+
 //1, first define a constructor and properties that initialized from the constructor
 class CustomerWithConstructorAndProperties(idParam: Int, nameParam: String) {
     val id: Int = idParam
@@ -31,6 +34,13 @@ class CustomerWithSecondaryConstructors(val id: Int, var name: String = "") {
     }
 }
 
+// 6
+class CustomerWithCustomGetter(val id: Int, var name: String, private val dateOfBirth: LocalDate) {
+
+    val age: Int
+        get() = Period.between(dateOfBirth, LocalDate.now()).years
+}
+
 
 // main ***********************************************************************
 fun main(args: Array<String>) {
@@ -57,5 +67,9 @@ fun main(args: Array<String>) {
 
     val c4 = CustomerWithSecondaryConstructors("10,Samir")
     println("id: ${c4.id}, name: ${c4.name}")
+
+    println(CustomerWithCustomGetter(1, "Mohammad", LocalDate.of(1985, 1, 1)).age)
+    println(CustomerWithCustomGetter(1, "Abdullah", LocalDate.of(2013, 11, 7)).age)
+    println(CustomerWithCustomGetter(1, "Farida", LocalDate.of(2016, 9, 9)).age)
 }
 
