@@ -22,7 +22,6 @@ class CustomerWithInitBlock(val id: Int, var name: String = "") {
 // 5
 class CustomerWithSecondaryConstructors(val id: Int, var name: String = "") {
 
-
     constructor(idAndName: String) :
             this(
                 idAndName.split(",")[0].toInt(),
