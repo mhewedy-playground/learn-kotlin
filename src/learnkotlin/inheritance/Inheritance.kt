@@ -12,21 +12,14 @@ enum class App {
     ERP, CRM
 }
 
-open class CrmCustomer : Person {
-
-    var clientApp: App = App.CRM
-
-    constructor(firstName: String, lastName: String, clientApp: App = App.CRM)
-            : super(firstName, lastName) {
-        this.clientApp = clientApp
-    }
-
+open class Customer(firstName: String, lastName: String, var clientApp: App = App.CRM) :
+    Person(firstName, lastName) {
 
     final override fun validate() = super.validate() && clientApp == App.CRM
 }
 
-class SpecialCrmCustomer(firstName: String, lastName: String) :
-    CrmCustomer(firstName, lastName) {
+class CrmCustomer(firstName: String, lastName: String) :
+    Customer(firstName, lastName) {
 
     /*
     // not allowed, as the super class validate function is final
@@ -37,9 +30,9 @@ class SpecialCrmCustomer(firstName: String, lastName: String) :
 }
 
 fun main(args: Array<String>) {
-    val c1 = CrmCustomer("abdullah", "hewedy")
+    val c1 = Customer("abdullah", "hewedy")
     println(c1.validate())
 
-    val c2 = CrmCustomer("abdullah", "hewedy", App.ERP)
+    val c2 = Customer("abdullah", "hewedy", App.ERP)
     println(c2.validate())
 }
