@@ -28,6 +28,7 @@ class CrmCustomer(firstName: String, lastName: String) :
 
 }
 
+// data class can extend regular class
 data class CustomerEntity(var myFirstName: String, var myLastName: String) :
     Customer(myFirstName, myLastName)
 
