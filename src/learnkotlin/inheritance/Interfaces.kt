@@ -13,6 +13,7 @@ interface BookRepository {
         get() = true
 
     fun save(book: Book) {
+        doXyz()
         println("generic implementation to save $book")
     }
 
