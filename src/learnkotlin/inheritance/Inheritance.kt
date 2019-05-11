@@ -1,5 +1,9 @@
 package learnkotlin.inheritance
 
+enum class App {
+    ERP, CRM
+}
+
 open class Person(var firstName: String, var lastName: String) { // extendable classes should be declared `open`
 
     open fun validate(): Boolean {       // overridable function should be declared  `open`
@@ -7,11 +11,7 @@ open class Person(var firstName: String, var lastName: String) { // extendable c
     }
 }
 
-enum class App {
-    ERP, CRM
-}
-
-open class Customer(firstName: String, lastName: String, var clientApp: App = App.CRM) :
+open class Customer(firstName: String, lastName: String, private val clientApp: App = App.CRM) :
     Person(firstName, lastName) {
 
     final override fun validate() = super.validate() && clientApp == App.CRM
