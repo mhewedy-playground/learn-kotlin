@@ -17,6 +17,12 @@ interface BookRepository {
     }
 
     fun findById(id: Long): Book
+
+
+    // can define private methods in interfaces
+    private fun doXyz(){
+
+    }
 }
 
 class SqlBookRepository : BookRepository {
