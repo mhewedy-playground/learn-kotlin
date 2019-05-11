@@ -30,7 +30,7 @@ class CrmCustomer(firstName: String, lastName: String) :
 }
 
 fun main(args: Array<String>) {
-    val c1 = Customer("abdullah", "hewedy")
+    val c1 = CrmCustomer("abdullah", "hewedy")
     println(c1.validate())
 
     val c2 = Customer("abdullah", "hewedy", App.ERP)
