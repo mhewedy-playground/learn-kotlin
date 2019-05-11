@@ -9,6 +9,7 @@ package learnkotlin.inheritance
 //
 // constructor( <parameters list> ) : super(<pass super class primary constructor args>)
 //
+// eventually, the super class primary constructor should be called
 
 open class Device(val serialNumber: String)
 
