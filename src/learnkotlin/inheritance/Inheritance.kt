@@ -2,7 +2,6 @@ package learnkotlin.inheritance
 
 open class Person(var firstName: String, var lastName: String) { // extendable classes should be declared `open`
 
-
     open fun validate(): Boolean {       // overridable function should be declared  `open`
         return firstName.isNotBlank() && lastName.isNotBlank()
     }
