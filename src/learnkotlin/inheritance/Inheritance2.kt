@@ -31,4 +31,7 @@ fun main(args: Array<String>) {
 
     val samsung = TVSet("123423", "Samsung")
     val playstation = GameConsole("123", true)
+
+    println(samsung)
+    println(playstation)
 }
