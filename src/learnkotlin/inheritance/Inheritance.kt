@@ -11,7 +11,7 @@ open class Person(var firstName: String, var lastName: String) { // extendable c
     }
 }
 
-open class Customer(firstName: String, lastName: String, private val clientApp: App = App.CRM) :
+open class Customer(firstName: String, lastName: String, val clientApp: App = App.CRM) :
     Person(firstName, lastName) {
 
     final override fun validate() = super.validate() && clientApp == App.CRM
@@ -28,10 +28,17 @@ class CrmCustomer(firstName: String, lastName: String) :
 
 }
 
+data class CustomerEntity(var myFirstName: String, var myLastName: String) :
+    Customer(myFirstName, myLastName)
+
 fun main(args: Array<String>) {
     val c1 = CrmCustomer("abdullah", "hewedy")
     println(c1.validate())
 
     val c2 = Customer("abdullah", "hewedy", App.ERP)
     println(c2.validate())
+
+    val customerEntity = CustomerEntity("Ali", "BaBa")
+    println(customerEntity)
+    println(customerEntity.clientApp)
 }
