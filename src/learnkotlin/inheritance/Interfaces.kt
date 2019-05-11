@@ -33,6 +33,26 @@ class SqlBookRepository : BookRepository {
     }
 }
 
+// resolve ambiguity in inheriting two interfaces
+interface Runner {
+    fun run() {
+        println("runner is running")
+    }
+}
+
+interface Vehicle {
+    fun run() {
+        println("vehicle is running")
+    }
+}
+
+class Driver : Runner, Vehicle {
+    override fun run() {
+        super<Runner>.run()
+    }
+
+}
+
 fun main(args: Array<String>) {
 
     val bookRepository = SqlBookRepository()
@@ -42,4 +62,6 @@ fun main(args: Array<String>) {
     bookRepository.save(Book(1, isbn = "10111313"))
 
     println(bookRepository.generalImpl)
+
+    Driver().run()
 }
