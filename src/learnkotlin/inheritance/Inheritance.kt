@@ -1,5 +1,16 @@
 package learnkotlin.inheritance
 
+
+// secondary constructor need to call primary constructor:
+//
+// constructor( <parameters list> ) : this(<pass primary constructor args>)
+//
+// if there's no primary constructor, then secondary constructor will call super class primary constructor:
+//
+// constructor( <parameters list> ) : super(<pass super class primary constructor args>)
+//
+
+
 enum class App {
     ERP, CRM
 }
