@@ -1,5 +1,15 @@
 package learnkotlin.inheritance
 
-open class Person
+open class Person { // extendable classes should be declared `open`
 
-class Customer : Person()
+    open fun validate() {       // overridable function should be declared `open`
+
+    }
+}
+
+class Customer : Person() {
+
+    override fun validate() {
+
+    }
+}
