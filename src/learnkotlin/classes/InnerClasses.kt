@@ -3,6 +3,7 @@ package learnkotlin.classes
 class Outer {
 
 
+    // by default, inner classes are static nested classes
     class Nested {
 
     }
