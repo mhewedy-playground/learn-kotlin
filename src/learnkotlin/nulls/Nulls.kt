@@ -22,6 +22,13 @@ fun main(args: Array<String>) {
     val hello : String? = "Hello"
     customerJava?.name = hello
 
+
+    checkNotNull(hello)
+
+    var nullMessage: String? = null
+    nullMessage = ""
+    println(nullMessage.length)
+
 }
 
 private fun getCustomerJava(): CustomerJava? = CustomerJava()
