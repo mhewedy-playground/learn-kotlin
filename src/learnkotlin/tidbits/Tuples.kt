@@ -30,6 +30,9 @@ fun main(args: Array<String>) {
     val (x, y) = getLocation()  // decomposition works for data classes too
     println("x=$x, y=$y")
 
+    val location = getLocation()
+    println(location.component1()) // componentN() is part of data classes
+
     val (xx, _, yy) = Triple(1, 2, 3)
     val (xx1, _, yy2) = Triple("a", 4.6, 3) // use underscore to ignore decomposition output
 }
