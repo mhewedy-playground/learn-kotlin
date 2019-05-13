@@ -19,6 +19,9 @@ fun getVacation(person: Person): Unit {
     }
 }
 
+
+val input: Any = 10
+
 fun main(args: Array<String>) {
 
     val emp = Employee()
@@ -26,4 +29,8 @@ fun main(args: Array<String>) {
 
     getVacation(emp)
     getVacation(cont)
+
+    // ClassCastException: java.base/java.lang.Integer cannot be cast to java.base/java.lang.String
+//    val str = input as String
+//    println(str)
 }
