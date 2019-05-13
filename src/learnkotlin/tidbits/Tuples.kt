@@ -16,6 +16,10 @@ fun main(args: Array<String>) {
 
     val cairoPopulation = capitalAndPopulation()
     println(cairoPopulation)
+    println(
+        "cairoPopulation.first ${cairoPopulation.first}, " +
+                "cairoPopulation.component2() ${cairoPopulation.component2()}"
+    )
 
     val (city, population) = capitalAndPopulation() // decomposition works for Tuples
     println("city=$city, population=$population")
