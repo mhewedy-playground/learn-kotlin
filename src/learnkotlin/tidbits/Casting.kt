@@ -33,4 +33,8 @@ fun main(args: Array<String>) {
     // ClassCastException: java.base/java.lang.Integer cannot be cast to java.base/java.lang.String
 //    val str = input as String
 //    println(str)
+
+
+    val str = input as? String  // safe cast
+    println(str?.length)
 }
