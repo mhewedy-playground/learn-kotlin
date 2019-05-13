@@ -18,8 +18,9 @@ fun main(args: Array<String>) {
 //
 //    println("name is ${customerJava!!.name}")
 
+    val len = customerJava?.name?.length
 
-    val hello : String? = "Hello"
+    val hello: String? = "Hello"
     customerJava?.name = hello
 
 
