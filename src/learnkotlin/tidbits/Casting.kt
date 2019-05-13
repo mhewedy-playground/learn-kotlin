@@ -35,6 +35,6 @@ fun main(args: Array<String>) {
 //    println(str)
 
 
-    val str = input as? String  // safe cast
+    val str = input as? String  // safe cast: do cast if you can or return null
     println(str?.length)
 }
