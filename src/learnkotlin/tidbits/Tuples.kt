@@ -35,4 +35,16 @@ fun main(args: Array<String>) {
 
     val (xx, _, yy) = Triple(1, 2, 3)
     val (xx1, _, yy2) = Triple("a", 4.6, 3) // use underscore to ignore decomposition output
+
+
+    val cc2 = listOf(Pair("Cairo", "Egypt"), "Riyadh" to "Saudi Arabia")
+    for ((cap, country) in cc2) {
+        println("$cap, $country")
+    }
+
+    val cc3 = mapOf(Pair("Cairo", "Egypt"), "Riyadh" to "Saudi Arabia")
+    for ((s, s1) in cc3) {
+        println("$s, $s1")
+    }
+
 }
