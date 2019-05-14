@@ -25,6 +25,10 @@ fun main(args: Array<String>) {
     // we can pass lambda expression
     println(operation(10, 20, { x, y -> x + y }))
 
+    // we might declare a variable of type lambda, and then we should specify the type
+    val op: (Int, Int) -> Int = { x, y -> x + y }
+    println(operation(10, 20, op))
+
     // we can put the lambda expression outside the parameter braces and surround it with curly brackets
     // if it is the last parameter to the original function
     println(operation(10, 20) { x, y -> x + y })
