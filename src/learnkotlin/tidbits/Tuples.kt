@@ -53,4 +53,14 @@ fun main(args: Array<String>) {
     for ((prop1, _ /*ignoring the prop2*/, prop3) in someDataClassList) {
         println("$prop1, $prop3")
     }
+
+    // anything can be on the righthand side of the destructuring declaration as long as
+    // it provides the appropriate componentN function, see:
+    class NonDataClass {
+        operator fun component1() = 1
+        operator fun component2() = 2
+        operator fun component3() = 3
+    }
+    val (non1, non2, non3) = NonDataClass()
+    println("$non1, $non2, $non3")
 }
