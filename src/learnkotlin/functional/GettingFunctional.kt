@@ -1,6 +1,6 @@
 package learnkotlin.functional
 
-fun operation(x: Int, y: Int, op: (Int, Int) -> Int) = op(x, y)
+fun operation(x: Int, y: Int, op: (Int, Int) -> Int) = op(x, y) // we can use op.invoke(x, y)
 
 object AddObject : (Int, Int) -> Int {
     override fun invoke(p1: Int, p2: Int) = p1 + p2
