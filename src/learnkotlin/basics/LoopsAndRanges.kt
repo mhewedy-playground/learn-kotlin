@@ -63,4 +63,14 @@ fun main(args: Array<String>) {
         }
     }
 
+    // ----- the in operator
+
+    println(8 in 1..10) // in operator is the contains function operator
+    println(8 in arrayOf(1, 3, 5)) // even in arrays
+
+    class MyType<T> {
+        operator fun contains(t: T) = true
+    }
+    println(10 in MyType<Int>())        // it works for any type with the contains operator
+
 }
