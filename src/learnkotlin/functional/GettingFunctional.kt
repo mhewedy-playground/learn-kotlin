@@ -33,6 +33,10 @@ fun main(args: Array<String>) {
     // if it is the last parameter to the original function
     println(operation(10, 20) { x, y -> x + y })
 
+
+    // we can create an anonymous function as well
+    println(operation(10, 20, fun(x: Int, y: Int) = x * y))
+
     // ----------------
 
     fun route(path: String, vararg actions: (String) -> String): String {
