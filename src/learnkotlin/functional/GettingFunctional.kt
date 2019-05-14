@@ -46,4 +46,14 @@ fun main(args: Array<String>) {
     fun bananaBox(str: String) = route(str, { "($it)" }, { "[$it]" })
 
     println(bananaBox("ABC"))
+
+    // -------------------
+
+    class MyObj
+
+    fun MyObj.myRun(fn: (Any?) -> Any?) {
+        fn(this)
+    }
+
+    MyObj().myRun { println("$it") }
 }
