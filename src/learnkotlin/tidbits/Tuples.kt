@@ -50,7 +50,7 @@ fun main(args: Array<String>) {
     data class SomeDataClass(val prop1: String, val prop2: String, val prop3: Int)
 
     val someDataClassList = arrayListOf(SomeDataClass("1", "2", 3))
-    for ((prop1, prop2, prop3) in someDataClassList) {
-        println("$prop1, $prop2, $prop3")
+    for ((prop1, _ /*ignoring the prop2*/, prop3) in someDataClassList) {
+        println("$prop1, $prop3")
     }
 }
