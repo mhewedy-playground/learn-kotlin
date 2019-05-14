@@ -36,7 +36,6 @@ fun main(args: Array<String>) {
     // ----------------
 
     fun route(path: String, vararg actions: (String) -> String): String {
-
         var initPath = path
         for (action in actions) {
             initPath = action(initPath)
