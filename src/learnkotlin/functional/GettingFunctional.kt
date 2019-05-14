@@ -28,4 +28,19 @@ fun main(args: Array<String>) {
     // we can put the lambda expression outside the parameter braces and surround it with curly brackets
     // if it is the last parameter to the original function
     println(operation(10, 20) { x, y -> x + y })
+
+    // ----------------
+
+    fun route(path: String, vararg actions: (String) -> String): String {
+
+        var initPath = path
+        for (action in actions) {
+            initPath = action(initPath)
+        }
+        return initPath
+    }
+
+    fun bananaBox(str: String) = route(str, { "($it)" }, { "[$it]" })
+
+    println(bananaBox("ABC"))
 }
