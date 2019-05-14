@@ -10,16 +10,22 @@ fun main(args: Array<String>) {
 
     fun add(x: Int, y: Int) = x + y
 
+    // we can pass function reference
     println(operation(10, 20, ::add))
 
-    println(operation(10, 20, { x, y -> x + y }))
-
-    println(operation(10, 20) { x, y -> x + y })
-
+    // we can pass object that implement the function
     println(operation(10, 20, AddObject))
 
+    // we can pass anonymous object that implements the function
     println(operation(10, 20, object : (Int, Int) -> Int {
         override fun invoke(x: Int, y: Int) = x + y
 
     }))
+
+    // we can pass lambda expression
+    println(operation(10, 20, { x, y -> x + y }))
+
+    // we can put the lambda expression outside the parameter braces and surround it with curly brackets
+    // if it is the last parameter to the original function
+    println(operation(10, 20) { x, y -> x + y })
 }
