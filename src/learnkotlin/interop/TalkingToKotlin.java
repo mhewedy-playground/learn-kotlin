@@ -1,7 +1,5 @@
 package learnkotlin.interop;
 
-import static learnkotlin.interop.TopLevelFunctionsKt.prefix;
-
 public class TalkingToKotlin {
 
     public static void main(String[] args) {
@@ -18,6 +16,6 @@ public class TalkingToKotlin {
 
         kotlinPerson.someFunc();
 
-        System.out.println(prefix("abc", "efg"));
+        System.out.println(StrUtilx.prefix("abc", "efg"));
     }
 }

@@ -1,3 +1,5 @@
+@file:JvmName("StrUtilx")
+
 package learnkotlin.interop
 
 
