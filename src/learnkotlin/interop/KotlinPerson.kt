@@ -1,6 +1,8 @@
+@file:JvmName("KotlinPersonExtensions")
+
 package learnkotlin.interop
 
-class KotlinPerson(val id: Long, var name: String) {
+data class KotlinPerson(val id: Long, var name: String) {
 
     @JvmField
     var email: String? = null
@@ -16,4 +18,8 @@ class KotlinPerson(val id: Long, var name: String) {
     companion object {
         const val PI = 3.14
     }
+}
+
+fun KotlinPerson.hello() {
+    println("hello ${this}")
 }

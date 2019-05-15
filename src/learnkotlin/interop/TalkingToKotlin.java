@@ -17,5 +17,7 @@ public class TalkingToKotlin {
         kotlinPerson.someFunc();
 
         System.out.println(StrUtilx.prefix("abc", "efg"));
+
+        KotlinPersonExtensions.hello(kotlinPerson);
     }
 }
