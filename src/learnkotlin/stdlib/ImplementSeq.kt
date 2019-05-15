@@ -1,5 +1,7 @@
 package learnkotlin.stdlib
 
+// Trying to implement the Sequence lazy evaluation
+
 open class Sequence<T>(private val iter: Iterator<T>) : Iterable<T> {
 
     override fun iterator(): Iterator<T> {
