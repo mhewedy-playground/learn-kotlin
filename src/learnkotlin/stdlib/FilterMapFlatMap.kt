@@ -36,10 +36,19 @@ val albums = listOf(
     Album("More", 1969, 9, 153)
 )
 
+fun albumsAndTracksLessThanXSeconds(durationInSeconds: Int, albums: List<Album>) =
+    albums.flatMap { album ->
+        album.tracks
+            .filter { it.durationInSeconds <= durationInSeconds }
+            .map { album.title to it.title }
+    }
+
 fun main() {
 
     albums.filter { it.chartUK == 1 }
         .sortedBy { it.year }
         .map { it.title to it.year }
         .forEach { println("album: $it") }
+
+    println(albumsAndTracksLessThanXSeconds(200, albums))
 }
