@@ -33,4 +33,8 @@ public class JavaPerson {
     public void setSsn(Long ssn) {
         this.ssn = ssn;
     }
+
+    static JavaPerson asNull() {
+        return null;
+    }
 }
