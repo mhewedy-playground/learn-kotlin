@@ -5,6 +5,9 @@ class KotlinPerson(val id: Long, var name: String) {
     @JvmField
     var email: String? = null
 
+    @JvmName("someFunc")
+    fun xyz(): String? = null
+
     @JvmOverloads
     fun changeStatus(str: String = "alive") {
 

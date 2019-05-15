@@ -13,5 +13,7 @@ public class TalkingToKotlin {
         kotlinPerson.changeStatus();
 
         System.out.println(KotlinPerson.PI);
+
+        kotlinPerson.someFunc();
     }
 }
