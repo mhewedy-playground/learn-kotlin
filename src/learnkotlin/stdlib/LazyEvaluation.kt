@@ -18,4 +18,7 @@ fun main() {
         .map { it + it }
         .filter { it < 700 }
         .forEach { println(it) }
+
+    // lazy variables
+    val lazy: Int by lazy { 10 }
 }
