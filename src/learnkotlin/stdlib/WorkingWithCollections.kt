@@ -25,4 +25,10 @@ fun main() {
     )
     println(citiesMap)
 
+    val intArrayOf = intArrayOf(1, 2, 6, 7)
+    val arrayOf = arrayOf(1, 2, 3)
+
+    println("intArrayOf[0].javaClass = ${intArrayOf[0].javaClass}")
+    println("arrayOf[0].javaClass = ${arrayOf[0].javaClass}")
+
 }
