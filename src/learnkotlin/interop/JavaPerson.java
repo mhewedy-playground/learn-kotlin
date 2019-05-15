@@ -1,5 +1,7 @@
 package learnkotlin.interop;
 
+import org.jetbrains.annotations.NotNull;
+
 public class JavaPerson {
 
     private int id;
@@ -36,5 +38,10 @@ public class JavaPerson {
 
     static JavaPerson asNull() {
         return null;
+    }
+
+    @NotNull
+    public String neverNull(){
+        return "abc";
     }
 }

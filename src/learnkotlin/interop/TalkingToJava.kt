@@ -45,4 +45,6 @@ fun main() {
     val kr = KotlinPersonRepositoryImpl()
     val nameLength = kr.findById(10).name?.length
     println("nameLength = $nameLength")
+
+    kr.findById(10).neverNull() // Type is String not Platform String (String!)
 }
