@@ -26,5 +26,7 @@ fun main() {
 
     val person = JavaPerson(10, "Ali")
     person.name = "Wael"
+    // person.id = null     // compile error: id of type Int (not Int!)
+    person.ssn = null       // ssn is nullable (Long!)
     println("${person.id} - ${person.name}")
 }
