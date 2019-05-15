@@ -50,5 +50,7 @@ fun main() {
         .map { it.title to it.year }
         .forEach { println("album: $it") }
 
-    println(albumsAndTracksLessThanXSeconds(200, albums))
+    for (albumsAndTracksLessThanXSecond in albumsAndTracksLessThanXSeconds(200, albums)) {
+        println(albumsAndTracksLessThanXSecond)
+    }
 }
