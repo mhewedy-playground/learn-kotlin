@@ -53,9 +53,9 @@ private class FilterSequence<T>(private val iter: Iterator<T>, private val op: (
 
             override fun next(): T {
                 val next = iter.next()
-                val result: Boolean = op(next)
-                return if (result) next
-                else null!! // fixme what should we return here...
+                val shouldBypassNext = op(next)
+                // todo if shouldBypassNext is false, then we need to bypass this element
+                return next
             }
         }
     }
