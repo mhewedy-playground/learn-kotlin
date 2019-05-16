@@ -3,8 +3,8 @@ package learnkotlin.advanced.functions
 fun op(x: Int, op: (Int) -> Int) = op(x)
 
 fun fx(x1: Int): (Int) -> (Int) -> Int {
-    return fun(x2: Int): (Int) -> Int {
-        return fun(x3: Int): Int {
+    return fun(x2): (Int) -> Int {
+        return fun(x3): Int {
             return x1 * x2 * x3
         }
     }
