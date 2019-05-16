@@ -32,4 +32,12 @@ fun main() {
     innerFunctionCanReturnItself()
     lambdaCannotReturnItself_OnlyTheSurroundingFunction()
     returnFromLambda()
+
+    outer@ for (i in arrayOf(1, 3, 5)) {
+        for (j in listOf(5, 6, 7)) {
+            if (i % j == 0) {
+                continue@outer
+            }
+        }
+    }
 }
