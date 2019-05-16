@@ -4,7 +4,8 @@ fun innerFunctionCanReturnItself() {
 
     (fun() {
         //println("executing Self-invoking function")
-        return  // same as return@f (i.e. return from the local function)
+
+        return  // returns from the local function
     }())
 
     println("hello yes inside: innerFunctionCanReturnItself")
@@ -21,7 +22,7 @@ fun lambdaCannotReturnItself_OnlyTheSurroundingFunction() {
 fun returnFromLambda() {
     1.rangeTo(10).forEach {
         it * it
-        return@forEach
+        return@forEach  // return from the forEach block
     }
     println("hello yes inside: returnFromLambda")
 }
