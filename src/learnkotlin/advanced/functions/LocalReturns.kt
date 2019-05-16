@@ -19,15 +19,14 @@ fun lambdaCannotReturnItself_OnlyTheSurroundingFunction() {
     println("hello yes inside: lambdaCannotReturnItself_OnlyTheSurroundingFunction")
 }
 
+inline fun <T> Iterable<T>.myForEach(action: (T) -> Unit): Unit {
+    for (element in this) action(element)
+}
+
 fun returnFromLambda() {
-
-    fun <T> Iterable<T>.myForEach(action: (T) -> Unit): Unit {
-        for (element in this) action(element)
-    }
-
     1.rangeTo(10).myForEach {
         it * it
-        return@myForEach  // return from the myForEach block
+        return@myForEach // return from the myForEach block
     }
     println("hello yes inside: returnFromLambda")
 }
