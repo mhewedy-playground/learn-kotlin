@@ -26,7 +26,6 @@ open class Sequence<T>(private val iter: Iterator<T>) : Iterable<T> {
 private class MapSequence<T>(private val iter: Iterator<T>, private val op: (T) -> (T)) :
     Iterable<T>, Sequence<T>(iter) {
 
-
     override fun iterator(): Iterator<T> {
 
         return object : Iterator<T> {
