@@ -31,11 +31,20 @@ fun returnFromLambda() {
     println("hello yes inside: returnFromLambda")
 }
 
+fun returnFromFun() {
+    1.rangeTo(10).myForEach(fun(x) {
+        x * x
+        return
+    })
+    println("hello yes inside: returnFromFun")
+}
+
 fun main() {
 
     innerFunctionCanReturnItself()
     lambdaCannotReturnItself_OnlyTheSurroundingFunction()
     returnFromLambda()
+    returnFromFun()
 
     outer@ for (i in arrayOf(1, 3, 5)) {
         for (j in listOf(5, 6, 7)) {
