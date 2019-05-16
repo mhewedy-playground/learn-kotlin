@@ -10,10 +10,17 @@ inline fun operation(op: () -> Unit): Unit {
     println("after call op")
 }
 
+inline fun op(op: () -> Unit) {
+    op()
+    throw Exception("some exception")
+}
+
 fun main() {
     operation {
         println("in the op function")
     }
 
     nOp(10)
+
+    op {}       // inline function body goes up
 }
