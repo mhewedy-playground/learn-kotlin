@@ -15,3 +15,10 @@ class DirectoryExplorer {
         }
     }
 }
+
+fun main() {
+    val directoryExplorer = DirectoryExplorer()
+    directoryExplorer.listFolder("", "usr")
+
+    val pc = DirectoryExplorer.PermissionChecker()
+}
