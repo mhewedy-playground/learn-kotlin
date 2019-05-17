@@ -1,6 +1,6 @@
 package learnkotlin.advanced.classes
 
-class Log() {
+class Log private constructor() {
 
     private var filename: String = ""
 
@@ -13,7 +13,7 @@ class Log() {
         fun createFileLog(filename: String) = Log(filename)
     }
 
-    constructor(filename: String) : this() {
+    private constructor(filename: String) : this() {
         this.filename = filename
     }
 }
