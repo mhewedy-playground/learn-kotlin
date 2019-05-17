@@ -10,7 +10,7 @@ class DirectoryExplorer {
         // to do list folder contents
     }
 
-    class PermissionChecker {
+    class PermissionChecker {       // it is a nested (static) class (check the bytecode)
         fun validatePermissions(user: String) {
         }
     }
