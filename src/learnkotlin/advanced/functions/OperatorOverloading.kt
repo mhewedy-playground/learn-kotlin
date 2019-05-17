@@ -14,6 +14,10 @@ operator fun Time.plus(other: Time): Time {
     )
 }
 
+operator fun StringBuilder.plus(other: StringBuilder) {
+    other.forEach { this.append(it) }
+}
+
 fun main() {
 
     assertEquals(
@@ -24,4 +28,9 @@ fun main() {
         Time(8, 1),
         Time(3, 31) + Time(4, 30)
     )
+
+    val sb = StringBuilder("hello yes")
+    val sb2 = StringBuilder("hello no")
+    sb + sb2
+    println(sb)
 }
