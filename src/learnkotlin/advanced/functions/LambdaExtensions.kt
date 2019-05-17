@@ -1,7 +1,10 @@
 package learnkotlin.advanced.functions
 
 data class Request(val method: String, val query: String, val contentType: String)
-data class Response(var payload: String, var status: Status)
+data class Response(var payload: String, var status: Status) {
+    operator fun invoke(fStatus: Status.() -> Unit) {}
+}
+
 data class Status(var code: Int, var desc: String)
 
 class RouteHandler(val request: Request, val response: Response) {
@@ -27,8 +30,6 @@ fun handle(method: String = "GET", path: String, f: RouteHandler.() -> Unit): Ro
     return f
 }
 
-fun response(f: Response.() -> Unit): Response.() -> Unit = f
-
 fun status(f: Status.() -> Unit): Status.() -> Unit = f
 
 fun main() {
@@ -38,11 +39,8 @@ fun main() {
             throw IllegalArgumentException("Invalid content request type")
 
         response {
-            payload = "{children list}"
-            status {
-                code = 200
-                desc = "OK"
-            }
+            code = 200
+            desc = "OK"
         }
     }
 }
