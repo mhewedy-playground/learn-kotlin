@@ -1,24 +1,28 @@
 package learnkotlin.advanced.classes
 
-class DirectoryExplorer {
+class DirectoryExplorer(val user: String) {
 
-    fun listFolder(folder: String, user: String) {
+    fun listFolder(folder: String) {
 
         val permissionChecker = PermissionChecker()
-        permissionChecker.validatePermissions(user)
+        permissionChecker.validatePermissions()
 
         // to do list folder contents
     }
 
-    class PermissionChecker {       // it is a nested (static) class (check the bytecode)
-        fun validatePermissions(user: String) {
+    inner class PermissionChecker {
+        fun validatePermissions() {
+            if (user != "mhewedy") {
+                throw Exception("access not granted")
+            }
         }
     }
 }
 
 fun main() {
-    val directoryExplorer = DirectoryExplorer()
-    directoryExplorer.listFolder("", "usr")
+    val directoryExplorer = DirectoryExplorer("mhewedy")
+    directoryExplorer.listFolder("")
 
-    val pc = DirectoryExplorer.PermissionChecker()
+    // still can access it on an instance of the [DirectoryExplorer] object
+    val pc = DirectoryExplorer("xyz").PermissionChecker()
 }
