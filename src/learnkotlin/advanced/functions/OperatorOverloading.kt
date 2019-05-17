@@ -18,6 +18,14 @@ operator fun StringBuilder.plus(other: StringBuilder) {
     other.forEach { this.append(it) }
 }
 
+class MyInvokable {
+    operator fun invoke() = "result of MyInvokable"
+}
+
+object ObjectInvokable {
+    operator fun invoke() = "result of ObjectInvokable"
+}
+
 fun main() {
 
     assertEquals(
@@ -33,4 +41,12 @@ fun main() {
     val sb2 = StringBuilder("hello no")
     sb + sb2
     println(sb)
+
+    // ---------
+    val myInvokable = MyInvokable()
+    println(myInvokable())
+
+    val string = ObjectInvokable()  // the braces for the invoke, not for the constructor,
+    // as this is an object and doesn't use constructor braces when invoked
+    println(string)
 }
