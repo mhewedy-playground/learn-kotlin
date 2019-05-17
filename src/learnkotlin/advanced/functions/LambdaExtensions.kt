@@ -26,11 +26,16 @@ fun handle(method: String = "GET", path: String, f: RouteHandler.() -> Unit): Ro
     return f
 }
 
+fun response(f: Response.() -> Unit): Response.() -> Unit = f
+
 fun main() {
     handle(path = "/api/v1/children") {
         if (request.contentType != "application/json")
             throw IllegalArgumentException("Invalid content request type")
 
-        response.payload = "{children list}"
+        response {
+            payload = "{children list}"
+            status = "200"
+        }
     }
 }
