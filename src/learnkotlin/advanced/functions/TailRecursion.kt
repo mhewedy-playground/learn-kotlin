@@ -15,6 +15,6 @@ tailrec fun factorialTr(number: Int, accumulator: Int = 1): Int {
 }
 
 fun main() {
-//    println(factorial(500000000))
-    println(factorialTr(500000000))
+//    println(factorial(50000))     // wil throws StackOverFlow
+    println(factorialTr(50000))
 }
