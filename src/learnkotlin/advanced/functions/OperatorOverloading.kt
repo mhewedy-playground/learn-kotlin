@@ -53,7 +53,7 @@ fun main() {
     // ----
 
     class Messenger {
-        infix fun send(message: String) {
+        infix fun send(message: String) {       // send cannot be operator (unlike scala akka)
             println("sending $message")
         }
     }
