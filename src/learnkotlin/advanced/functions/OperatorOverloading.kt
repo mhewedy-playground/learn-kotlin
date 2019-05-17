@@ -49,4 +49,15 @@ fun main() {
     val string = ObjectInvokable()  // the braces for the invoke, not for the constructor,
     // as this is an object and doesn't use constructor braces when invoked
     println(string)
+
+    // ----
+
+    class Messenger {
+        infix fun send(message: String) {
+            println("sending $message")
+        }
+    }
+
+    val messenger = Messenger()
+    messenger send "Hello"  //infix but with no operator overloading
 }
