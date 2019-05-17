@@ -16,7 +16,11 @@ class RouteHandler(val request: Request, val response: Response) {
     }
 }
 
-fun handle(method: String = "GET", path: String, f: RouteHandler.() -> Unit): RouteHandler.() -> Unit {
+fun handle(
+    method: String = "GET", path: String,
+    f: RouteHandler.() -> Unit
+): RouteHandler.() -> Unit {
+    
     fun extractQueryParam(path: String): String = "param1=value1"
 
     val routeHandler = RouteHandler(
@@ -29,8 +33,6 @@ fun handle(method: String = "GET", path: String, f: RouteHandler.() -> Unit): Ro
 
     return f
 }
-
-fun status(f: Status.() -> Unit): Status.() -> Unit = f
 
 fun main() {
     handle(path = "/api/v1/children") {
