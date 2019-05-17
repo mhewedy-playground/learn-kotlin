@@ -1,7 +1,8 @@
 package learnkotlin.advanced.functions
 
 data class Request(val method: String, val query: String, val contentType: String)
-data class Response(var payload: String, var status: String)
+data class Response(var payload: String, var status: Status)
+data class Status(var code: Int, var desc: String)
 
 class RouteHandler(val request: Request, val response: Response) {
 
@@ -17,7 +18,7 @@ fun handle(method: String = "GET", path: String, f: RouteHandler.() -> Unit): Ro
 
     val routeHandler = RouteHandler(
         Request(method, extractQueryParam(path), "application/json"),
-        Response("", "")
+        Response("", Status(0, ""))
     )
     f(routeHandler)
 
@@ -28,14 +29,20 @@ fun handle(method: String = "GET", path: String, f: RouteHandler.() -> Unit): Ro
 
 fun response(f: Response.() -> Unit): Response.() -> Unit = f
 
+fun status(f: Status.() -> Unit): Status.() -> Unit = f
+
 fun main() {
     handle(path = "/api/v1/children") {
+
         if (request.contentType != "application/json")
             throw IllegalArgumentException("Invalid content request type")
 
         response {
             payload = "{children list}"
-            status = "200"
+            status {
+                code = 200
+                desc = "OK"
+            }
         }
     }
 }
