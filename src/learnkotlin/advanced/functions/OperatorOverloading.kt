@@ -57,5 +57,6 @@ fun main() {
     }
 
     val messenger = Messenger()
-    messenger send "Hello"  //infix but with no operator overloading
+    val message = "Hello"
+    messenger send message  //infix but with no operator overloading
 }
