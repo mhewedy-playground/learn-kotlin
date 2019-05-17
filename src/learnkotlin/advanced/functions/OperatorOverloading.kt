@@ -6,11 +6,9 @@ data class Time(val hours: Int, val minutes: Int)
 
 operator fun Time.plus(other: Time): Time {
     val minutes = this.minutes + other.minutes
-    val hoursInMinutes = minutes / 60
-    val minutesInMinutes = minutes % 60
     return Time(
-        this.hours + other.hours + hoursInMinutes,
-        minutesInMinutes
+        this.hours + other.hours + minutes / 60,
+        minutes % 60
     )
 }
 
