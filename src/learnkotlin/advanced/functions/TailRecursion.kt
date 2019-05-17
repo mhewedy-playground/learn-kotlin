@@ -1,15 +1,15 @@
 package learnkotlin.advanced.functions
 
-fun factorial(number: Long): Long {
+fun factorial(number: Int): Int {
     return when (number) {
-        0L, 1L -> 1
+        0, 1 -> 1
         else -> number * factorial(number - 1)
     }
 }
 
-tailrec fun factorialTr(number: Long, accumulator: Long = 1): Long {
+tailrec fun factorialTr(number: Int, accumulator: Int = 1): Int {
     return when (number) {
-        0L -> accumulator
+        0 -> accumulator
         else -> factorialTr(number - 1, number * accumulator)
     }
 }
