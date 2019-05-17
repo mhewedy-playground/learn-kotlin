@@ -20,7 +20,7 @@ fun handle(
     method: String = "GET", path: String,
     f: RouteHandler.() -> Unit
 ): RouteHandler.() -> Unit {
-    
+
     fun extractQueryParam(path: String): String = "param1=value1"
 
     val routeHandler = RouteHandler(
@@ -45,4 +45,10 @@ fun main() {
             desc = "OK"
         }
     }
+
+    operator fun String.times(other: String) = "$this*$other"
+    "10".let {
+        println(it * it)
+    }
 }
+
