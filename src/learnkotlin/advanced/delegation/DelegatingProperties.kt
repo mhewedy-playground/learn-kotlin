@@ -19,7 +19,7 @@ object PropertyDelegator {
     }
 
     private fun log(source: Nothing?, property: KProperty<*>) {
-        println("nothing: \"$source\", property: \"$property\"")
+        println("source: \"$source\", property: \"$property\"")
     }
 }
 
