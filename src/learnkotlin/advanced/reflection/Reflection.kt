@@ -3,6 +3,7 @@ package learnkotlin.advanced.reflection
 import java.lang.reflect.Type
 import kotlin.reflect.KClass
 import kotlin.reflect.KProperty1
+import kotlin.reflect.full.memberProperties
 
 class Test(val name: String, val age: Int)
 
@@ -33,7 +34,10 @@ fun main() {
     val constructor = ::Test
     val args = constructor.parameters.zip(arrayListOf("ali", 30)).toMap()
     val testObject = constructor.callBy(args)
-    println(testObject.name)
+
+    Test::class.memberProperties
+        .map { it.get(testObject) }
+        .forEach { println("value: $it") }
 }
 
 // use Type projection on the KClass
