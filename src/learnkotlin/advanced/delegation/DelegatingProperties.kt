@@ -17,10 +17,23 @@ object PropertyDelegator {
         log(source, property)
         value = s
     }
+}
 
-    private fun log(source: Nothing?, property: KProperty<*>) {
-        println("source: \"$source\", property: \"$property\"")
+// we can use the anonymous object syntax as well
+var myProperty2: String by object {
+    operator fun getValue(source: Nothing?, property: KProperty<*>): String {
+        log(source, property)
+        return PropertyDelegator.value
     }
+
+    operator fun setValue(source: Nothing?, property: KProperty<*>, s: String) {
+        log(source, property)
+        PropertyDelegator.value = s
+    }
+}
+
+private fun log(source: Nothing?, property: KProperty<*>) {
+    println("source: \"$source\", property: \"$property\"")
 }
 
 fun main() {
