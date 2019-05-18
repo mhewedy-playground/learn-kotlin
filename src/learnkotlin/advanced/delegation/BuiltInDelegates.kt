@@ -21,6 +21,13 @@ var sitterAge by vetoable(0, fun(_, _, n): Boolean {
 
 var sitterAge by vetoable(0, { _, _, n -> n in 20..60 })
 
+// use property delegates on local variables
+fun someFun() {
+    val myLazyVariable by lazyOf(10)
+    val myLazyVariable2 by lazy { someInitFun() }
+}
+fun someInitFun(): String  = "Hello world"
+
 fun main() {
     myVariable = 30
     myVariable = 50
