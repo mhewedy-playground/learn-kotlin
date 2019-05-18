@@ -19,3 +19,15 @@ fun <T : Entity> save(entity: T) {  // single upper bound only
 
     }
 }
+
+class CustomerEntity(id: Long?) : Entity(id), Savable {
+
+    override fun doSave() {
+        // save into db
+    }
+
+}
+
+fun main() {
+
+}
