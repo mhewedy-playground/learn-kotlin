@@ -22,5 +22,7 @@ public class Invariant {
         List<Employee> employees = new ArrayList<>();
         // operate(employees);    // not covariant, in fact java is type-invariant
 
+        // test
+
     }
 }
