@@ -18,8 +18,6 @@ class HasDotExtensionObject {
 }
 */
 
-
-
 fun main() {
     println("\"Hello\".hasAmpersand = ${"Hello".hasAmpersand}")
     println("\"Hello & Hi\".hasAmpersand = ${"Hello & Hi".hasAmpersand}")
