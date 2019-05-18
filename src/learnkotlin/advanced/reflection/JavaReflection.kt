@@ -1,9 +1,17 @@
 package learnkotlin.advanced.reflection
 
 import java.lang.reflect.Type
+import kotlin.reflect.KClass
 import kotlin.reflect.KProperty1
 
+class Test(val name: String)
+
 fun main() {
+
+    val kProperty12: KProperty1<Test, String> = Test::name
+
+    val kClass: KClass<Test> = Test::class
+
 
     class Abc
 
@@ -16,4 +24,9 @@ fun main() {
 
     val kProperty1: KProperty1<Abc, Class<Abc>> = Abc::javaClass
     val kProperty11 = kProperty1(Abc())
+
+    getKotlinType(Test::class)
 }
+
+
+fun getKotlinType(type: KClass<*>) = println(type)
