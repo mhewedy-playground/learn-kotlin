@@ -18,5 +18,5 @@ fun main() {
     sitterAge = 30
     println(sitterAge)
     sitterAge = 70
-    println(sitterAge)
+    println(sitterAge)  // sitter is still 30
 }
