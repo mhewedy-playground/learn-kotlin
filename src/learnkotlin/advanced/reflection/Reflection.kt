@@ -35,6 +35,10 @@ fun main() {
     val args = constructor.parameters.zip(arrayListOf("ali", 30)).toMap()
     val testObject = constructor.callBy(args)
 
+    println(testObject::name.get())
+    println(testObject.name)
+    println(testObject::name.call())
+
     Test::class.memberProperties
         .map { it.get(testObject) }
         .forEach { println("value: $it") }
