@@ -33,4 +33,6 @@ class CustomerEntity(id: Long?) : Entity(id), Savable {
 fun main() {
     val customerEntity = Repository<CustomerEntity>()
     customerEntity.save(CustomerEntity())
+
+    save(CustomerEntity())
 }
