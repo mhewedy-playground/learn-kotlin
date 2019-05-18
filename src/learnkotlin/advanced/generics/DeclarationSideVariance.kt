@@ -1,6 +1,6 @@
 package learnkotlin.advanced.generics
 
-interface ReadOnlyRepoCovariant<out T> {        // declaration-side variant
+interface ReadOnlyRepoCovariant<out T> {        // declaration-side variance
     fun findOne(id: Int): T
     fun findAll(): List<T>
 }
