@@ -26,6 +26,9 @@ fun main() {
     val kProperty11 = kProperty1(Abc())
 
 
+    //
+    getKotlinType(Test::class)
+
     // create object by reference to constructor function
     val constructor = ::Test
     val args = constructor.parameters.zip(arrayListOf("ali", 30)).toMap()
@@ -33,5 +36,5 @@ fun main() {
     println(testObject.name)
 }
 
-
+// use Type projection on the KClass
 fun getKotlinType(type: KClass<*>) = println(type)
