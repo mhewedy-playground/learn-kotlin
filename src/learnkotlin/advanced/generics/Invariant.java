@@ -20,7 +20,7 @@ public class Invariant {
         operate(people);    // works
 
         List<Employee> employees = new ArrayList<>();
-        // operate(employees);    // not covariant
+        // operate(employees);    // not covariant, in fact java is invariant
 
     }
 }
