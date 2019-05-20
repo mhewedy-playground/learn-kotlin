@@ -9,7 +9,6 @@ fun main() {
     println(list)
 
 /*
-
     var `element$iv$iv`: Any
     var var9: Boolean
     while (var6.hasNext()) {
