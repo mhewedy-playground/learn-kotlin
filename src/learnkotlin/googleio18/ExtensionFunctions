@@ -1,0 +1,44 @@
+//Kotlin decomplied to Java
+package learnkotlin.googleio18;
+
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt;
+import org.jetbrains.annotations.NotNull;
+
+@Metadata(
+   mv = {1, 1, 15},
+   bv = {1, 0, 3},
+   k = 2,
+   d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a\u0006\u0010\u0000\u001a\u00020\u0001\u001a\u0014\u0010\u0002\u001a\u00020\u0003*\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003¨\u0006\u0005"},
+   d2 = {"main", "", "getFirstWord", "", "separator", "learn-kotlin"}
+)
+public final class ExtensionFunctionsKt {
+   @NotNull
+   public static final String getFirstWord(@NotNull String $this$getFirstWord, @NotNull String separator) {
+      Intrinsics.checkParameterIsNotNull($this$getFirstWord, "$this$getFirstWord");
+      Intrinsics.checkParameterIsNotNull(separator, "separator");
+      return StringsKt.indexOf$default((CharSequence)$this$getFirstWord, separator, 0, false, 6, (Object)null) < 0 ? $this$getFirstWord : (String)StringsKt.split$default((CharSequence)$this$getFirstWord, new String[]{separator}, false, 0, 6, (Object)null).get(0);
+   }
+
+   // $FF: synthetic method
+   @NotNull
+   public static String getFirstWord$default(String var0, String var1, int var2, Object var3) {
+      if ((var2 & 1) != 0) {
+         var1 = " ";
+      }
+
+      return getFirstWord(var0, var1);
+   }
+
+   public static final void main() {
+      String var0 = getFirstWord$default("Hello World", (String)null, 1, (Object)null);
+      boolean var1 = false;
+      System.out.println(var0);
+   }
+
+   // $FF: synthetic method
+   public static void main(String[] var0) {
+      main();
+   }
+}
