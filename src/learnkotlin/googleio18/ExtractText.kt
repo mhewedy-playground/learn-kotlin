@@ -6,7 +6,6 @@ sealed class Element
 class Container(vararg val elements: Element) : Element()
 class Text(val text: String) : Element()
 
-
 fun Element.extractText(): String {
     val sb = StringBuilder()
     fun extractText(element: Element) {
@@ -22,7 +21,6 @@ fun Element.extractText(): String {
     extractText(this)
     return sb.toString()
 }
-
 
 fun main() {
     val root = Container(
