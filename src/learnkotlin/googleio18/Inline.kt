@@ -5,6 +5,7 @@ fun main() {
     // one loop for each operation are inlined
     val list = listOf(1, 3, 5, 7, 10, 19)
         .map { it.toString() }
+        .also { println(it) }
         .filter { it.length == 1 }
     println(list)
 
