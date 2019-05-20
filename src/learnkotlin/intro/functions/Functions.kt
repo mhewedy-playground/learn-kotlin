@@ -57,6 +57,6 @@ fun main(args: Array<String>) {
     println(addAll(*intArray))
 
     val intList = arrayListOf(1, 2, 3, 4, 5, 6)
-    println(addAll(*intList.toIntArray()))  // `toIntArray` is an expensive operation, cause it do loop over elements
+    println(addAll(*intList.toIntArray()))  // `toIntArray` is an expensive operation, cause it do loop over children
 
 }

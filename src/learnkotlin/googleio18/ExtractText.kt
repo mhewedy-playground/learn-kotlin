@@ -3,7 +3,7 @@ package learnkotlin.googleio18
 import kotlin.test.assertTrue
 
 sealed class Element
-class Container(vararg val elements: Element) : Element()
+class Container(vararg val children: Element) : Element()
 class Text(val text: String) : Element()
 
 fun Element.extractText(): String {
@@ -11,11 +11,7 @@ fun Element.extractText(): String {
     fun extractText(element: Element) {
         when (element) {
             is Text -> sb.append(element.text)
-            is Container -> {
-                for (sub in element.elements) {
-                    extractText(sub)
-                }
-            }
+            is Container -> for (e in element.children) extractText(e)
         }
     }
     extractText(this)
@@ -30,6 +26,5 @@ fun main() {
         ),
         Text("E")
     )
-
     assertTrue { root.extractText() == "ABCDE" }
 }
